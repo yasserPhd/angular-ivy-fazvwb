@@ -1,0 +1,25 @@
+
+
+
+  
+	<div class="topnav">
+  <a class="active" th:href="#about"> Acceuil </a> 
+	<a th:href="#about"> consulter les clients </a> 
+	<a th:href="#about">consulter les paiments </a> 
+	
+  <a th:href="#about">Contact</a>
+	<a th:href="#about"> aide</a>
+</div>
+<div class="vertical-menu">
+  <a href="#" class="active">Home</a>
+ <a th:href="@{FormAdd}"> Ajouter client</a>
+ <a th:href="@{searchNames}"> Ajouter paiment</a>
+  <a href="#">consulter les entrainemets</a>
+  <!-- <a th:href="@{http://localhost:8080/api/employee}">nutrition</a> -->
+ <a th:href="@{addFood}">nutrition</a> 
+  <a href="#">les transformations </a>
+  <a th:href="@{GetSalary}"> salaire  <p th:text="${salaire}">  </p></a>
+  <a th:href="@{GetSalary}"> benifice  </a>
+     
+</div>
+
