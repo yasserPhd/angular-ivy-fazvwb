@@ -62,3 +62,8 @@ p {
   background-color: #4CAF50; /* Add a green color to the "active/current" link */
   color: white;
 }
+body {
+ background-image: url("paper.gif");
+ background-color: #cccccc;
+}
+
