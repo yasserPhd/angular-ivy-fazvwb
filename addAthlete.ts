@@ -1,14 +1,13 @@
 import {Component} from '@angular/core';
 import {Athlete} from './athlete';
-import {Router} from '@angular/router';
 @Component({
-  selector:'add-employee',
-  templateUrl:'add-employee.component.html',
+  selector:'add-athlete',
+  templateUrl:'addAthlete.html',
   styles: [ `input.ng-invalid{border-left:5px solid red;}
   input.ng-valid{border-left:5px solid green;}` ]
   })
-export class AddEmployeeComponent{
-  employees:Employee[]=[];
+export class AddAthleteComponent{
+  athletes:Athlete[]=[];
   constructor(private employeeService:EmployeeService, private router:Router){}
   onSubmit(employee):void{
     this.employeeService.addEmployee(employee as Employee).subscribe(employee=>{
