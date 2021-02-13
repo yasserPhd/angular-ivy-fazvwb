@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import {Routes} from '@angular/router';
 
-import { addAthlete} from './addAthlete';
+import { AddAthleteComponent} from './addAthlete';
 
-const appRoutes: Routes=[{path:'addAthlete',component:addAthlete}]
+const appRoutes: Routes=[{path:'addAthlete',component:AddAthleteComponent}]
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
