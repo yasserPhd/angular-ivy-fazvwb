@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {Athlete} from './athlete';
+import {AthleteService} from './AthleteService';
+import { Router} from '@angular/router';
 @Component({
   selector:'add-athlete',
   templateUrl:'addAthlete.html',
@@ -8,11 +10,11 @@ import {Athlete} from './athlete';
   })
 export class AddAthleteComponent{
   athletes:Athlete[]=[];
-  constructor(private employeeService:EmployeeService, private router:Router){}
-  onSubmit(employee):void{
-    this.employeeService.addEmployee(employee as Employee).subscribe(employee=>{
-      this.employees.push(employee);
+  constructor(private athleteService:AthleteService, private router:Router){}
+  onSubmit(athlete):void{
+    this.athleteService.addEmployee(athlete as Athlete).subscribe(athlete=>{
+      this.athletes.push(athlete);
     });
-    this.router.navigate(["/employees"]);
+    this.router.navigate(["/athletes"]);
   }
 }

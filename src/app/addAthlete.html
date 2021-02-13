@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+<title>list etudiant</title>
+				
+
+</head>
+<body>
+ 
+ <div class="scrollmenu">
+  <a th:href="@{index}">Acceuil</a>
+  <a th:href="@{example}">consulter les clients </a> <!-- th:href="@{index()}" -->
+  <a th:href="@{contact}">Contact</a>
+  <a href="#about">aide</a>
+</div> 
+
+
+
+
+ <div class="container spacer">
+ 
+ 	
+ 
+ 
+ 
+
+ <form th:action="@{addEtud}" method="get"> 
+ 	 	<label> ajouter client :</label>
+ 	 	 
+ 	 	<form>
+ 	 	<div > id  </div>
+ 		<div> <input type="number" name="id"/>   </div> 
+ 		 <div > Nom  </div>
+ 		<div> <input type="text" name="nom"/>   </div> 
+ 		 <div > Date de naissance </div>
+ 		<div>  <input type="date" name="date"/>   </div>
+ 		  <div >   Email </div>
+ 		  <div >   <input type="text" name="email"/> </div> 
+ 		  <div >   Montant </div>
+ 		 <!--  <div >   <input type="text" name="Montant"/> </div>  -->
+ 		  
+  <!--  <label>Start Date: </label>
+   <div > <input type="date" id="dateTime" name="date_debut"  /> </div>
+        
+    <label>End Date: </label>
+   <div > <input type="date" id="dateTime" name="date_f" /> </div>      -->
+
+       
+ 		 <div > Photo </div> 
+ 		<div > <input type="file" id="photo"  name="photo"  accept="image/x-png,image/gif,image/jpeg" />  </div> 
+ 		<!-- <div > <input type="text" id="photo" name="photo" value =" "  /> </div> -->
+ 	<!-- <div > <input type="file" id="photoFile" name="photo" accept="image/png, image/jpeg">  </div>   -->
+ 	
+	 <button id="btn1" type="submit">add client</button> 
+	  
+ 	  
+ 	 </form>
+ 	</form> 
+ 
+</div>
+
+  
+
+</body>
+</html>
