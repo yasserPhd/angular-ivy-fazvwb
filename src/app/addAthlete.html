@@ -1,67 +1,69 @@
-<!DOCTYPE html>
-<html>
+<h3>Add Employee</h3>
+<div class="container">
+  <form #addEmp="ngForm" (ngSubmit)="onSubmit(addEmp.value)">
+    <div class="form-group">
+      <label for="name">Athlete Name:</label>
+      <input type="text" required #refName="ngModel" minlength="3" maxlength="30" name="name" pattern="[a-zA-Z ]*$" id="name" class="form-control" [(ngModel)]="name"/>
+      <div *ngIf="refName.errors && (refName.dirty||refName.touched)" class="alert alert-danger">
+        <div [hidden]="!refName.errors.required">
+          Please enter a name
+        </div>
+        <div [hidden]="!refName.errors.minlength">
+          name must be 3 or more characters.
+        </div>
+        <div [hidden]="!refMob.errors.pattern">
+          Please enter only alphabets.
+        </div>
+      </div>
+    </div>
 
-<head>
-  
-<title>list etudiant</title>
-				
 
-</head>
-<body>
- 
- <div class="scrollmenu">
-  <a th:href="@{index}">Acceuil</a>
-  <a th:href="@{example}">consulter les clients </a> <!-- th:href="@{index()}" -->
-  <a th:href="@{contact}">Contact</a>
-  <a href="#about">aide</a>
-</div> 
+    <div class="form-group">
+      <label for="location">Location</label>
+      <select #refloc="ngModel" [(ngModel)]="location" name="location" class="form-control" id="location" required>
+        <option>Banglore</option>
+        <option>Chennai</option>
+        <option>Pune</option>
+        <option>Hyderabad</option>
+      </select>
+      <div *ngIf="refName.errors && (refName.dirty||refName.touched)" class="alert alert-danger">
+        <div [hidden]="!refName.errors.required">
+          Please enter a name
+        </div>
+      </div>
+    </div>
 
 
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" required email maxlength="30" #refMail="ngModel" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" [(ngModel)]="email"/>
+      <div *ngIf="refMail.errors && (refMail.dirty||refMail.touched)" class="alert alert-danger">
+        <div [hidden]="!refMail.errors.required">
+          Please enter email
+        </div>
+        <div [hidden]="!refMail.errors.email">
+          Please enter a valid email.
+        </div>
+        <div [hidden]="!refMob.errors.pattern">
+        Please enter valid email
+        </div>
+      </div>
+    </div>
 
 
- <div class="container spacer">
- 
- 	
- 
- 
- 
-
- <form th:action="@{addEtud}" method="get"> 
- 	 	<label> ajouter client :</label>
- 	 	 
- 	 	<form>
- 	 	<div > id  </div>
- 		<div> <input type="number" name="id"/>   </div> 
- 		 <div > Nom  </div>
- 		<div> <input type="text" name="nom"/>   </div> 
- 		 <div > Date de naissance </div>
- 		<div>  <input type="date" name="date"/>   </div>
- 		  <div >   Email </div>
- 		  <div >   <input type="text" name="email"/> </div> 
- 		  <div >   Montant </div>
- 		 <!--  <div >   <input type="text" name="Montant"/> </div>  -->
- 		  
-  <!--  <label>Start Date: </label>
-   <div > <input type="date" id="dateTime" name="date_debut"  /> </div>
-        
-    <label>End Date: </label>
-   <div > <input type="date" id="dateTime" name="date_f" /> </div>      -->
-
-       
- 		 <div > Photo </div> 
- 		<div > <input type="file" id="photo"  name="photo"  accept="image/x-png,image/gif,image/jpeg" />  </div> 
- 		<!-- <div > <input type="text" id="photo" name="photo" value =" "  /> </div> -->
- 	<!-- <div > <input type="file" id="photoFile" name="photo" accept="image/png, image/jpeg">  </div>   -->
- 	
-	 <button id="btn1" type="submit">add client</button> 
-	  
- 	  
- 	 </form>
- 	</form> 
- 
+    <div class="form-group">
+      <label for="mobile">Mobile:</label>
+      <input type="text" required pattern="^[1-9]\d{9}$" #refMob="ngModel" id="mobile" name="mobile" class="form-control" [(ngModel)]="mobile"/>
+    </div>
+    <div *ngIf="refMob.errors && (refMob.dirty || refMob.touched)" class="alert alert-danger">
+      <div [hidden]="!refMob.errors.required">
+        Please enter a mobile number.
+      </div>
+      <div [hidden]="!refMob.errors.pattern">
+        Please enter valid mobile number
+      </div>
+    </div>
+   
+    <button [disabled]="!addEmp.form.valid" type="submit" id="add" class="btn btn-primary">Submit</button>
+  </form>
 </div>
-
-  
-
-</body>
-</html>
